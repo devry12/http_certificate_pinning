@@ -110,7 +110,7 @@ public class SwiftHttpCertificatePinningPlugin: NSObject, FlutterPlugin {
 
             // Evaluate server certificate
             var result: SecTrustResultType = .invalid
-            SecTrustEvaluate(serverTrust, &result)
+            SecTrustEvaluateWithError(serverTrust, &result)
             let isServerTrusted: Bool = (result == .unspecified || result == .proceed)
 
             let serverCertData = SecCertificateCopyData(certificate) as Data
