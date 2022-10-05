@@ -61,7 +61,7 @@ public class SwiftHttpCertificatePinningPlugin: NSObject, FlutterPlugin {
             timeout = timeoutArg
         }
         
-        let manager = Alamofire.SessionManager(
+        let manager = Alamofire.Session(
             configuration: URLSessionConfiguration.default
         )
         
